@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lion Fun Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7e7a9; /* Lion yellow theme */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        button {
+            background-color: #ffcc00;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e6b800;
+        }
+
+        .fact-display {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+            transition: opacity 0.5s ease;
+            opacity: 0;
+        }
+
+        .fact-display.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lion Fun Facts</h1>
+        <button id="factButton">Show me a fact!</button>
+        <div id="factDisplay" class="fact-display"></div>
+    </div>
+    <script>
+        const facts = [
+            "Lions are the only cats that live in groups, known as prides.",
+            "A lion's roar can be heard from as far as 5 miles away.",
+            "Lions are the second largest big cat species in the world, after tigers.",
+            "Male lions have a distinctive mane that grows larger and darker as they age.",
+            "Lions can run at speeds of up to 50 miles per hour, but only for short distances.",
+            "A lion's tongue is rough enough to peel the skin off its prey.",
+            "Lions spend around 16 to 20 hours a day resting or sleeping.",
+            "Female lions, or lionesses, do most of the hunting for the pride.",
+            "Lions communicate with each other through a variety of vocalizations, body language, and scent markings."
+        ];
+
+        document.getElementById('factButton').addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const factDisplay = document.getElementById('factDisplay');
+            factDisplay.textContent = facts[randomIndex];
+            factDisplay.classList.add('show');
+        });
+    </script>
+</body>
+</html>
